@@ -4,12 +4,9 @@
 * Promotes code reuse and establishes an “is-a” relationship
 
 ---
-
-![Inheritance.png](src/main/resources/Inheritance.png)
-
+![Inheritance.png](src/main/resources/images/Inheritance.png)
 ---
 
 # TuitionFeePayment.java added
-
-![TuitionFeePayment.png](src/main/resources/TuitionFeePayment.png)
+![TuitionFeePayment.png](src/main/resources/images/TuitionFeePayment.png)
 ---
