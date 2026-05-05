@@ -16,27 +16,27 @@ public class Student extends Person{
         this.program = program;
     }
 
-    public Student(){
-
-    }
-
-    public int getStudentID() {
-        return studentID;
-    }
-
-    public String getStudentName(){
-        return studentName;
-    }
-
-
-
-    public void setStudentID(int studentID){
-        this.studentID = studentID;
-    }
-
-    public void setName(String studentName){
-        this.studentName = studentName;
-    }
+//    public Student(){
+//
+//    }
+//
+//    public int getStudentID() {
+//        return studentID;
+//    }
+//
+//    public String getStudentName(){
+//        return studentName;
+//    }
+//
+//
+//
+//    public void setStudentID(int studentID){
+//        this.studentID = studentID;
+//    }
+//
+//    public void setName(String studentName){
+//        this.studentName = studentName;
+//    }
 
 
 

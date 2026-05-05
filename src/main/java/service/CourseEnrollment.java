@@ -4,7 +4,7 @@ import java.util.*;
 
 public class CourseEnrollment {
     private ArrayList<Course> courseList = new ArrayList<>();
-    private Scanner input = new Scanner(System.in);
+//    private Scanner input = new Scanner(System.in);
 
     public void addCourse(Course course) {
         courseList.add(course);
@@ -16,30 +16,30 @@ public class CourseEnrollment {
     }
 
     // Updates
-    public void updateCourse(Course course) {
-        for (int i = 0; i < courseList.size(); i++) {
-            if (courseList.get(i).getCourseID() == course.getCourseID()) {
-
-                System.out.print("Enter course name: ");
-                String courseName = input.nextLine();
-
-                System.out.print("Enter program: ");
-                String program = input.nextLine();
-
-                courseList.set(i, new Course(course.getCourseID(), courseName, program));
-                break;
-            }
-        }
-    }
+//    public void updateCourse(Course course) {
+//        for (int i = 0; i < courseList.size(); i++) {
+//            if (courseList.get(i).getCourseID() == course.getCourseID()) {
+//
+//                System.out.print("Enter course name: ");
+//                String courseName = input.nextLine();
+//
+//                System.out.print("Enter program: ");
+//                String program = input.nextLine();
+//
+//                courseList.set(i, new Course(course.getCourseID(), courseName, program));
+//                break;
+//            }
+//        }
+//    }
 
     // Delete
-    public String deleteCourse(Course course) {
-        for (int i = 0; i < courseList.size(); i++) {
-            if (courseList.get(i).getCourseID() == (course.getCourseID())) {
-                courseList.remove(i);
-                return "Successfully Deleted";
-            }
-        }
-        return "Error";
-    }
+//    public String deleteCourse(Course course) {
+//        for (int i = 0; i < courseList.size(); i++) {
+//            if (courseList.get(i).getCourseID() == (course.getCourseID())) {
+//                courseList.remove(i);
+//                return "Successfully Deleted";
+//            }
+//        }
+//        return "Error";
+//    }
 }
