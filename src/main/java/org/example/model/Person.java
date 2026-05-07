@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class Person {
+public abstract class Person {
     private int ID;
     private String name;
 
@@ -28,5 +28,7 @@ public class Person {
     public void setName(String name){
         this.name = name;
     }
+
+    abstract void mainTask();
 
 }

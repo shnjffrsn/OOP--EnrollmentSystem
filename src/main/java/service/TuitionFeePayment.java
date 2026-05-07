@@ -1,4 +1,4 @@
-package org.example.model;
+package service;
 
 public class TuitionFeePayment {
     private final double PRICE_PER_UNIT = 1000.00;

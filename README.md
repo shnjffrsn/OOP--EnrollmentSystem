@@ -1,12 +1,21 @@
-# Inheritance
-
-* Key concept in OOP that allows a new class (subclass/child) to acquire the properties and behaviors (fields and methods) of an existing class (superclass/parent)
-* Promotes code reuse and establishes an “is-a” relationship
+# Abstraction
 
 ---
-![Inheritance.png](src/main/resources/images/Inheritance.png)
----
 
-# TuitionFeePayment.java added
-![TuitionFeePayment.png](src/main/resources/images/TuitionFeePayment.png)
+## ABSTRACT CLASS
+* class that cannot be instantiated directly
+* used as a base for other classes
+* can contain abstract methods (methods without a body) as well as regular methods (with an implementation)
+* class declared with the “abstract” keyword
+
+
+---
+## 1. Person.java
+![PersonAbstraction.png](src/main/resources/images/PersonAbstraction.png)
+---
+## 2. Student.java
+![StudentAbstraction.png](src/main/resources/images/StudentAbstraction.png)
+---
+## 3. Instructor.java
+![InstructorAbstraction.png](src/main/resources/images/InstructorAbstraction.png)
 ---

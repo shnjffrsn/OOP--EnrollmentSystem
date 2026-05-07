@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class Instructor extends org.example.model.Person {
+public abstract class Instructor extends Person{
     private String courses;
 
     public Instructor(String courses){
@@ -8,14 +8,12 @@ public class Instructor extends org.example.model.Person {
         this.courses = courses;
     }
 
-    void instructor() {
+    void instructor(){
         System.out.println(courses);
     }
+
     @Override
-    public String toString() {
-        return "Instructor{" +
-                "name" + getName() + '\'' +
-                "courses" + courses +
-                "}";
+    void mainTask(){
+        System.out.println("Instructor teaches");
     }
 }

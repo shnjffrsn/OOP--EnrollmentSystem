@@ -1,44 +1,44 @@
 package org.example.model;
 
+import service.CourseEnrollment;
+import service.StudentEnrollment;
+import service.TuitionFeePayment;
+
+import javax.xml.transform.Source;
+
 public class Main {
     public static void main(String[] args) {
 
-        Instructor instructor = new Instructor("Inteprog");
-        Student student = new Student(123, "Manny Pacquiao", "BSFS");
-        Course course = new Course(321, "Inteprog", "BSFS");
-        TuitionFeePayment payment = new TuitionFeePayment();
+//        Instructor instructor = new Instructor("Inteprog");
+//        Student student = new Student(123, "Manny Pacquiao", "BSFS");
+//        Course course = new Course(321, "Inteprog", "BSFS");
 
-        instructor.setName("Mang Juan");
-        System.out.println(instructor);
-        student.setID(123);
-        student.setName("Manny Pacquiao");
-        student.setProgram("BSFS");
-        System.out.println(student.getID());
-        System.out.println(student.getName());
-        System.out.println(student.getProgram());
+//        System.out.println(instructor);
+//
+//        student.setID(123);
+//        student.setName("Manny Pacquiao");
+//        student.setProgram("BSFS");
+//        System.out.println(student.getID());
+//        System.out.println(student.getName());
+//        System.out.println(student.getProgram());
+//
+//        course.setCourseID(321);
+//        course.setCourseName("Inteprog");
+//        course.setProgram("BSFS");
+//        System.out.println(course.getCourseID());
+//        System.out.println(course.getCourseName());
+//        System.out.println(course.getProgram());
 
-        course.setCourseID(321);
-        course.setCourseName("Inteprog");
-        course.setProgram("BSFS");
-        System.out.println(course.getCourseID());
-        System.out.println(course.getCourseName());
-        System.out.println(course.getProgram());
+//        TuitionFeePayment tuitionFeePayment = new TuitionFeePayment();
+//        System.out.println(tuitionFeePayment.calculateTuitionFee(3, 0.10));
+//        tuitionFeePayment.makePayment(1000);
+//        System.out.println(tuitionFeePayment.getRemainingBalance());
 
-        double total = payment.calculateTuitionFee(3, 0.10);
-        System.out.println("Total Tuition Fee: " + total);
-
-        payment.makePayment(1500.00);
-
-        System.out.println("Remaining Balance: " + payment.getRemainingBalance());
-        System.out.println("Is Fully Paid? " + payment.isFullyPaid());
-
-        payment.makePayment(payment.getRemainingBalance());
-
-        System.out.println("Final Balance: " + payment.getRemainingBalance());
-        System.out.println("Is Fully Paid? " + payment.isFullyPaid());
 
     }
 }
+
+
 
 //        Scanner input = new Scanner(System.in);
 

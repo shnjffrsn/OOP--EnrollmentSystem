@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class Student extends Person{
+public abstract class Student extends Person{
     String program;
 
     public Student(int ID, String name, String program){
@@ -16,29 +16,10 @@ public class Student extends Person{
         this.program = program;
     }
 
-//    public Student(){
-//
-//    }
-//
-//    public int getStudentID() {
-//        return studentID;
-//    }
-//
-//    public String getStudentName(){
-//        return studentName;
-//    }
-//
-//
-//
-//    public void setStudentID(int studentID){
-//        this.studentID = studentID;
-//    }
-//
-//    public void setName(String studentName){
-//        this.studentName = studentName;
-//    }
-
-
+    @Override
+    void mainTask(){
+        System.out.println("Student learns");
+    }
 
     @Override
     public String toString() {
