@@ -1,6 +1,6 @@
 package org.example.model;
 
-public abstract class Student extends Person{
+public class Student extends Person{
     String program;
 
     public Student(int ID, String name, String program){

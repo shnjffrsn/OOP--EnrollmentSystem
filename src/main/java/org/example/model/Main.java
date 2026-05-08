@@ -1,12 +1,9 @@
 package org.example.model;
 
-import service.CourseEnrollment;
-import service.StudentEnrollment;
-
 public class Main {
     public static void main(String[] args) {
 
-        Instructor instructor = new Instructor("Inteprog");
+        Instructor instructor = new Instructor(72811, "Ms. Take", "Dismath");
         Student student = new Student(123, "Manny Pacquiao", "BSFS");
         Course course = new Course(321, "Inteprog", "BSFS");
         TuitionFeePayment payment = new TuitionFeePayment();

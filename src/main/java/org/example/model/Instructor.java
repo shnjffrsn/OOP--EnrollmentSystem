@@ -1,15 +1,19 @@
 package org.example.model;
 
-public abstract class Instructor extends Person{
-    private String courses;
+public class Instructor extends Person{
+    String courses;
 
-    public Instructor(String courses){
-        super();
+    public Instructor(int ID, String name, String courses){
+        super(ID, name);
         this.courses = courses;
     }
 
-    void instructor(){
-        System.out.println(courses);
+    public String getCourses(){
+        return courses;
+    }
+
+    public void setCourses(String courses){
+        this.courses = courses;
     }
         @Override
         public String toString() {
