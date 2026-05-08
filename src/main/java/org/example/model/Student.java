@@ -17,11 +17,6 @@ public abstract class Student extends Person{
     }
 
     @Override
-    void mainTask(){
-        System.out.println("Student learns");
-    }
-
-    @Override
     public String toString() {
         return "Student{" +
                 "id" + getID() + '\'' +

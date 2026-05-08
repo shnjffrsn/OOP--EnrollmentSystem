@@ -11,9 +11,10 @@ public abstract class Instructor extends Person{
     void instructor(){
         System.out.println(courses);
     }
-
-    @Override
-    void mainTask(){
-        System.out.println("Instructor teaches");
-    }
+        @Override
+        public String toString() {
+            return "Instructor{" +
+                    "name" + getName() + '\'' +
+                    "courses" + courses +
+                    "}";    }
 }
