@@ -6,7 +6,7 @@ public class Main {
         Instructor instructor = new Instructor(72811, "Ms. Take", "Dismath");
         Student student = new Student(123, "Manny Pacquiao", "BSFS");
         Course course = new Course(321, "Inteprog", "BSFS");
-        TuitionFeePayment payment = new TuitionFeePayment();
+        TuitionFeePayment payment = new TuitionFeePayment(123322);
 
         instructor.setName("Mang Juan");
         System.out.println(instructor);
@@ -24,15 +24,15 @@ public class Main {
         System.out.println(course.getCourseName());
         System.out.println(course.getProgram());
 
-        double total = payment.calculateTuitionFee(3, 0.10);
-        System.out.println("Total Tuition Fee: " + total);
-
-        payment.makePayment(1500.00);
-
-        System.out.println("Remaining Balance: " + payment.getRemainingBalance());
-        System.out.println("Is Fully Paid? " + payment.isFullyPaid());
-
-        payment.makePayment(payment.getRemainingBalance());
+//        double total = payment.calculateTuitionFee(3, 0.10);
+//        System.out.println("Total Tuition Fee: " + total);
+//
+//        payment.makePayment(1500.00);
+//
+//        System.out.println("Remaining Balance: " + payment.getRemainingBalance());
+//        System.out.println("Is Fully Paid? " + payment.isFullyPaid());
+//
+//        payment.makePayment(payment.getRemainingBalance());
 
         System.out.println("Final Balance: " + payment.getRemainingBalance());
         System.out.println("Is Fully Paid? " + payment.isFullyPaid());
