@@ -1,12 +1,19 @@
 package org.example.service;
 import org.example.model.Student;
 import java.util.*;
+import org.example.exceptions.DuplicateIDException;
+
 
 public class StudentEnrollment {
     ArrayList<Student> studentList = new ArrayList<>();
     Scanner input = new Scanner (System.in);
 
-    public void addStudent(Student student){
+    public void addStudent(Student student) throws DuplicateIDException {
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getID() == student.getID()) {
+                throw new DuplicateIDException("Student with ID " + student.getID() + " already exists.");
+            }
+        }
         studentList.add(student);
     }
 

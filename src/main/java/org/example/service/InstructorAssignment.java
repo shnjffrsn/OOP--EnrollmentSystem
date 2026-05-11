@@ -2,11 +2,18 @@ package org.example.service;
 import org.example.model.Instructor;
 import org.example.model.Section;
 import java.util.*;
+import org.example.exceptions.DuplicateIDException;
+
 
 public class InstructorAssignment implements InstructorInterface {
     ArrayList<Instructor> instructorList = new ArrayList<>();
 
-    public void addInstructor(Instructor instructor) {
+    public void addInstructor(Instructor instructor) throws DuplicateIDException{
+        for (int i = 0; i < instructorList.size(); i++) {
+            if (instructorList.get(i).getID() == instructor.getID()) {
+                throw new DuplicateIDException("Instructor with ID " + instructor.getID() + " already exists.");
+            }
+        }
         instructorList.add(instructor);
     }
 

@@ -4,10 +4,12 @@ import org.example.model.Department;
 import org.example.model.Instructor;
 import org.example.model.Section;
 import org.example.model.Student;
+import org.example.exceptions.SectionFullException;
+
 
 public class EnrollmentAService implements EnrollmentInterface {
 
-    public void enrollStudentInSection(Student student, Section section) {
+    public void enrollStudentInSection(Student student, Section section) throws SectionFullException {
         for (int i = 0; i < section.getEnrolledStudents().size(); i++) {
             Student s = section.getEnrolledStudents().get(i);
             if (s.getID() == student.getID()) {
@@ -16,9 +18,8 @@ public class EnrollmentAService implements EnrollmentInterface {
             }
         }
         if (section.getEnrolledStudents().size() >= section.getMaxCapacity()) {
-            System.out.println("Enrollment failed: Section '" + section.getSectionName() + "' is currently full ("
+            throw new SectionFullException("Enrollment failed: Section '" + section.getSectionName() + "' is currently full ("
                     + section.getMaxCapacity() + "/" + section.getMaxCapacity() + ").");
-            return;
         }
         section.getEnrolledStudents().add(student);
         System.out.println(student.getName() + " enrolled in " + section.getSectionName());
