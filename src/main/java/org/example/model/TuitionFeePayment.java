@@ -23,14 +23,6 @@ public class TuitionFeePayment {
         return amountPaid;
     }
 
-    public double getRemainingBalance(){
-        return totalTuition - amountPaid;
-    }
-
-    public boolean isFullyPaid(){
-        return getRemainingBalance() <= 0;
-    }
-
     public void setTotalTuition(double totalTuition){
         this.totalTuition = totalTuition;
     }

@@ -1,12 +1,24 @@
 package org.example.model;
 
+import java.util.*;
+
 public class Section {
+    int sectionID;
     String sectionName;
     int maxCapacity;
+    Instructor instructor;
+    ArrayList<Student> studentsEnrolled;
 
-    public Section(String sectionName, int maxCapacity) {
+    public Section(int sectionID, String sectionName, int maxCapacity, Instructor instructor) {
+        this.sectionID = sectionID;
         this.sectionName = sectionName;
         this.maxCapacity = maxCapacity;
+        this.instructor = instructor;
+        this.studentsEnrolled = new ArrayList<>();
+    }
+
+    public int getSectionID(){
+        return sectionID;
     }
 
     public String getSectionName(){
@@ -17,6 +29,18 @@ public class Section {
         return maxCapacity;
     }
 
+    public int getInstructor(){
+        return instructor;
+    }
+
+    public ArrayList<Student> getEnrolledStudents(){
+        return studentsEnrolled;
+    }
+
+    public void setSectionID(int sectionID){
+        this.sectionID = sectionID;
+    }
+
     public void setSectionName(String sectionName){
         this.sectionName = sectionName;
     }
@@ -24,6 +48,14 @@ public class Section {
     public void setMaxCapacity(int maxCapacity) {
         this.maxCapacity = maxCapacity;
     }
+
+    public void setInstructor(Instructor instructor){
+        this.instructor = instructor;
+    }
+
+//    public ArrayList<Student> setStudentsEnrolled(ArrayList<Student> studentsEnrolled){
+//        return studentsEnrolled;
+//    }
 
     @Override
     public String toString() {

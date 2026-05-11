@@ -5,8 +5,9 @@ public class Main {
 
         Instructor instructor = new Instructor(72811, "Ms. Take", "Dismath");
         Student student = new Student(123, "Manny Pacquiao", "BSFS");
-        Course course = new Course(321, "Inteprog", "BSFS");
+        Course course = new Course(321, "Inteprog", "BSFS", 3);
         TuitionFeePayment payment = new TuitionFeePayment(123322);
+        Section section = new Section(2823839,"Name",30);
 
         instructor.setName("Mang Juan");
         System.out.println(instructor);
