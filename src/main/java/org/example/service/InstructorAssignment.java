@@ -27,7 +27,7 @@ public class InstructorAssignment implements InstructorInterface {
                 Instructor inst = instructorList.get(i);
                 System.out.println("Instructor Details");
                 System.out.println("Name: " + inst.getName());
-                System.out.println("Department: " + inst.getDepartment());
+                System.out.println("Courses: " + inst.getCourses());
                 return;
             }
         }
