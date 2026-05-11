@@ -6,11 +6,10 @@ public class Course {
     String program;
     int units;
 
-    public Course(int courseID, String courseName, String program, int units){
+    public Course(int courseID, String courseName, String program){
         this.courseID = courseID;
         this.courseName = courseName;
         this.program = program;
-        this.units = units;
     }
 
     public int getCourseID(){
@@ -23,10 +22,6 @@ public class Course {
 
     public String getProgram(){
         return program;
-    }
-
-    public int getUnits(){
-        return units;
     }
 
     public void setCourseID(int courseID){

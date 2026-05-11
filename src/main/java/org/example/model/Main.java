@@ -5,7 +5,7 @@ public class Main {
 
         Instructor instructor = new Instructor(72811, "Ms. Take", "Dismath");
         Student student = new Student(123, "Manny Pacquiao", "BSFS");
-        Course course = new Course(321, "Inteprog", "BSFS", 3);
+        Course course = new Course(321, "Inteprog", "BSFS");
         TuitionFeePayment payment = new TuitionFeePayment(123322);
 
         instructor.setName("Mang Juan");
