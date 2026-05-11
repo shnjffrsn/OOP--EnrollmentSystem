@@ -34,8 +34,8 @@ public class Main {
 //
 //        payment.makePayment(payment.getRemainingBalance());
 
-        System.out.println("Final Balance: " + payment.getRemainingBalance());
-        System.out.println("Is Fully Paid? " + payment.isFullyPaid());
+//        System.out.println("Final Balance: " + payment.getRemainingBalance());
+//        System.out.println("Is Fully Paid? " + payment.isFullyPaid());
 
 
     }
