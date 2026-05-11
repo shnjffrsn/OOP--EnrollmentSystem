@@ -10,6 +10,7 @@ public class Course {
         this.courseID = courseID;
         this.courseName = courseName;
         this.program = program;
+        this.units = units;
     }
 
     public int getCourseID(){
@@ -22,6 +23,10 @@ public class Course {
 
     public String getProgram(){
         return program;
+    }
+
+    public int getUnits(){
+        return units;
     }
 
     public void setCourseID(int courseID){

@@ -7,7 +7,7 @@ import org.example.model.TuitionFeePayment;
 public class TuitionCalculation implements TuitionInterface {
 
     public TuitionFeePayment calculateFee(Student student, Course course) {
-        TuitionFeePayment payment = new TuitionFeePayment();
+        TuitionFeePayment payment = new TuitionFeePayment(student.getID());
         double fee = payment.calculateTuitionFee(course.getUnits());
         System.out.println("PHP " + fee + " for " + student.getName());
         return payment;
@@ -19,12 +19,12 @@ public class TuitionCalculation implements TuitionInterface {
             return;
         }
         if (amount > payment.getRemainingBalance()) {
-            System.out.println("Overpayment's not allowed. Remaining balance: PHP "
+            System.out.println("Overpayment's not allowed. Remaining balance is P"
                     + payment.getRemainingBalance());
             return;
         }
         payment.makePayment(amount);
-        System.out.println("Payment of PHP " + amount + " accepted. Remaining: PHP "
+        System.out.println("Payment: " + amount + ". Remaining payment is P"
                 + payment.getRemainingBalance());
     }
 
