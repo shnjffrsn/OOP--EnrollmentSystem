@@ -2,9 +2,8 @@ package org.example.service;
 import org.example.model.Course;
 import java.util.*;
 
-public class CourseEnrollment {
+public class CourseEnrollment implements CourseInterface{
     ArrayList<Course> courseList = new ArrayList<>();
-    Scanner input = new Scanner(System.in);
 
     public void addCourse(Course course) {
         courseList.add(course);
@@ -17,15 +16,9 @@ public class CourseEnrollment {
     public void updateCourse(Course course) {
         for (int i = 0; i < courseList.size(); i++) {
             if (courseList.get(i).getCourseID() == course.getCourseID()) {
-
-                System.out.print("Enter course name: ");
-                String courseName = input.nextLine();
-
-                System.out.print("Enter program: ");
-                String program = input.nextLine();
-
-                courseList.set(i, new Course(course.getCourseID(), courseName, program));
-                break;
+                courseList.set(i, course);
+                System.out.println("Successfully Updated.");
+                return;
             }
         }
     }
