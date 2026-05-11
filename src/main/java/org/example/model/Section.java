@@ -9,11 +9,10 @@ public class Section {
     Instructor instructor;
     ArrayList<Student> studentsEnrolled;
 
-    public Section(int sectionID, String sectionName, int maxCapacity, Instructor instructor) {
+    public Section(int sectionID, String sectionName, int maxCapacity) {
         this.sectionID = sectionID;
         this.sectionName = sectionName;
         this.maxCapacity = maxCapacity;
-        this.instructor = instructor;
         this.studentsEnrolled = new ArrayList<>();
     }
 
@@ -29,7 +28,7 @@ public class Section {
         return maxCapacity;
     }
 
-    public int getInstructor(){
+    public Instructor getInstructor(){
         return instructor;
     }
 
@@ -53,15 +52,16 @@ public class Section {
         this.instructor = instructor;
     }
 
-//    public ArrayList<Student> setStudentsEnrolled(ArrayList<Student> studentsEnrolled){
-//        return studentsEnrolled;
-//    }
+    public ArrayList<Student> setStudentsEnrolled(ArrayList<Student> studentsEnrolled){
+        return studentsEnrolled;
+    }
 
     @Override
     public String toString() {
         return "Section{" +
                 "name" + sectionName + '\'' +
                 "max-capacity" + maxCapacity +
+                "no-of-students-enrolled" + studentsEnrolled.size() + '\'' +
                 "}";
     }
 }

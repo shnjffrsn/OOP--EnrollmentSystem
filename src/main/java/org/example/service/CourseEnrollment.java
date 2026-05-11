@@ -1,4 +1,4 @@
-package service;
+package org.example.service;
 import org.example.model.Course;
 import java.util.*;
 
