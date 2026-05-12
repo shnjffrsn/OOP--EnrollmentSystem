@@ -95,8 +95,8 @@ public class CampusRegistrar {
         enrollmentService.viewDepartmentHierarchy(department);
     }
 
-    public TuitionFeePayment calculateFee(Student student, Course course) {
-        return tuitionCalculation.calculateFee(student, course);
+    public TuitionFeePayment calculateFee(Student student, Course course, double discountPercent) {
+        return tuitionCalculation.calculateFee(student, course, discountPercent);
     }
 
     public void makePayment(TuitionFeePayment payment, double amount) {

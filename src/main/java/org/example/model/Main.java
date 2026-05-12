@@ -366,7 +366,15 @@ public class Main {
                     System.out.print("Enter Units: ");
                     int units = nextInt();
 
-                    activePayment = registrar.calculateFee(new Student(studentID, name, prog), new Course(courseID, cName, prog, units));
+                    System.out.print("Apply scholarship discount? (y/n): ");
+                    String applyDiscount = input.nextLine().trim().toLowerCase();
+                    double discountPercent = 0;
+                    if (applyDiscount.equals("y")) {
+                        System.out.print("Enter discount (e.g. 50 = 50%): ");
+                        discountPercent = nextDouble();
+                    }
+
+                    activePayment = registrar.calculateFee(new Student(studentID, name, prog), new Course(courseID, cName, prog, units), discountPercent);
                     break;
 
                 case 2:
