@@ -6,7 +6,7 @@ public class Course {
     String program;
     int units;
 
-    public Course(int courseID, String courseName, String program){
+    public Course(int courseID, String courseName, String program, int units){
         this.courseID = courseID;
         this.courseName = courseName;
         this.program = program;
@@ -50,7 +50,8 @@ public class Course {
         return "Course{" +
                 "id" + courseID + '\'' +
                 "name" + courseName + '\'' +
-                "program" + program +
+                "program" + program + '\'' +
+                "units" + units +
                 "}";
     }
 }

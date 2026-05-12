@@ -21,5 +21,6 @@ public class Instructor extends Person {
             return "Instructor{" +
                     "name" + getName() + '\'' +
                     "courses" + courses +
-                    "}";    }
+                    "}";
+    }
 }

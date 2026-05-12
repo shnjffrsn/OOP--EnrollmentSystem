@@ -52,8 +52,8 @@ public class Section {
         this.instructor = instructor;
     }
 
-    public ArrayList<Student> setStudentsEnrolled(ArrayList<Student> studentsEnrolled){
-        return studentsEnrolled;
+    public void setStudentsEnrolled(ArrayList<Student> studentsEnrolled){
+        this.studentsEnrolled = studentsEnrolled;
     }
 
     @Override

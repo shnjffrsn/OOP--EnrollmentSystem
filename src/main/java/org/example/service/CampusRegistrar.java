@@ -16,7 +16,7 @@ public class CampusRegistrar {
             studentEnrollment.addStudent(student);
             System.out.println("Student added: " + student.getName());
         } catch (DuplicateIDException e) {
-            System.out.println("[ERROR] " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
@@ -24,18 +24,21 @@ public class CampusRegistrar {
         studentEnrollment.displayAllStudents();
     }
 
-    public void updateStudent(Student student) {
-        studentEnrollment.updateStudent(student);
+    public void updateStudent(Student student, String name, String program) {
+        studentEnrollment.updateStudent(student, name, program);
     }
 
-    public void deleteStudent(Student student) {
-        String result = studentEnrollment.deleteStudent(student);
-        System.out.println(result);
+    public String deleteStudent(Student student) {
+            return studentEnrollment.deleteStudent(student);
     }
 
     public void addCourse(Course course) {
+        try {
         courseEnrollment.addCourse(course);
         System.out.println("Course added: " + course.getCourseName());
+        } catch (DuplicateIDException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void displayAllCourses() {
@@ -46,9 +49,8 @@ public class CampusRegistrar {
         courseEnrollment.updateCourse(course);
     }
 
-    public void deleteCourse(Course course) {
-        String result = courseEnrollment.deleteCourse(course);
-        System.out.println(result);
+    public String deleteCourse(Course course) {
+        return courseEnrollment.deleteCourse(course);
     }
 
     public void addInstructor(Instructor instructor) {
@@ -56,12 +58,25 @@ public class CampusRegistrar {
             instructorAssignment.addInstructor(instructor);
             System.out.println("Instructor added: " + instructor.getName());
         } catch (DuplicateIDException e) {
-            System.out.println("[ERROR] " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
     public void assignInstructorToSection(Instructor instructor, Section section) {
         instructorAssignment.assignInstructorToSection(instructor, section);
+    }
+
+    public void updateInstructor(Instructor instructor, String name, String courses) {
+        instructorAssignment.updateInstructor(instructor, name, courses);
+    }
+
+    public String removeInstructor(Instructor instructor) {
+        return instructorAssignment.removeInstructor(instructor);
+    }
+
+    public void addSectionToDepartment(Department department, Section section) {
+        department.setSection(section);
+        System.out.println("Section " + section.getSectionName() + " added to " + department.getDepartmentName());
     }
 
     public void getInstructorDetails(int id) {
@@ -72,7 +87,7 @@ public class CampusRegistrar {
         try {
             enrollmentService.enrollStudentInSection(student, section);
         } catch (SectionFullException e) {
-            System.out.println("[ERROR] " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 

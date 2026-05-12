@@ -7,4 +7,6 @@ public interface InstructorInterface {
     void addInstructor(Instructor instructor) throws DuplicateIDException;
     void assignInstructorToSection(Instructor instructor, Section section);
     void getInstructorDetails(int id);
+    void updateInstructor(Instructor instructor, String name, String courses);
+    String removeInstructor(Instructor instructor);
 }
