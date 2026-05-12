@@ -24,9 +24,10 @@ public class StudentEnrollment implements StudentInterface{
             if (studentList.get(i).getID() == student.getID()) {
                 studentList.set(i, new Student(student.getID(), name, program));
                 System.out.println("Successfully Updated.");
-                break;
+                return;
             }
         }
+        System.out.println("Student not found.");
     }
 
     public String deleteStudent(Student student) {
@@ -36,6 +37,6 @@ public class StudentEnrollment implements StudentInterface{
                 return "Successfully Deleted";
             }
         }
-        return "Error";
+        return "Student not found";
     }
 }

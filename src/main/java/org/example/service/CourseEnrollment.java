@@ -28,6 +28,7 @@ public class CourseEnrollment implements CourseInterface{
                 return;
             }
         }
+        System.out.println("Course not found.");
     }
 
     public String deleteCourse(Course course) {
@@ -37,6 +38,6 @@ public class CourseEnrollment implements CourseInterface{
                 return "Successfully Deleted";
             }
         }
-        return "Error";
+        return "Course not found.";
     }
 }

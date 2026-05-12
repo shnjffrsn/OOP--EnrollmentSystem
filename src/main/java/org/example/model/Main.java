@@ -7,8 +7,7 @@ public class Main {
 
     public static CampusRegistrar registrar = new CampusRegistrar();
     public static Scanner input = new Scanner(System.in);
-
-    public static Department dept = new Department("College of Information Technology");
+    public static Department dept = new Department("College of Information Technology and Engineering");
     public static TuitionFeePayment activePayment = null;
 
     public static void main(String[] args){
@@ -231,36 +230,16 @@ public class Main {
 
     public static void sectionMenu() {
         while (true) {
-            System.out.println("1. Add Department with Section");
-            System.out.println("2. Add Section to Department");
-            System.out.println("3. Enroll Student in Section");
-            System.out.println("4. Assign Instructor to Section");
-            System.out.println("5. View Department Hierarchy");
-            System.out.println("6. Back");
+            System.out.println("1. Add Section to Department");
+            System.out.println("2. Enroll Student in Section");
+            System.out.println("3. Assign Instructor to Section");
+            System.out.println("4. View Department Hierarchy");
+            System.out.println("5. Back");
             System.out.print("Choose Number: ");
             int choice = nextInt();
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter Department Name: ");
-                    String departmentName = input.nextLine();
-                    dept = new Department(departmentName);
-
-                    System.out.print("Enter Section ID: ");
-                    int secID = nextInt();
-
-                    System.out.print("Enter Section Name: ");
-                    String secName = input.nextLine();
-
-                    System.out.print("Enter Max Capacity: ");
-                    int maxCap = nextInt();
-
-                    Section newSec = new Section(secID, secName, maxCap);
-
-                    registrar.addSectionToDepartment(dept, newSec);
-                    break;
-
-                case 2:
                     System.out.print("Enter Section ID: ");
                     int sid = nextInt();
 
@@ -273,7 +252,7 @@ public class Main {
                     registrar.addSectionToDepartment(dept, new Section(sid, sname, cap));
                     break;
 
-                case 3:
+                case 2:
                     System.out.print("Enter Student ID: ");
                     int studentID = nextInt();
 
@@ -301,7 +280,7 @@ public class Main {
                     registrar.enrollStudentInSection(new Student(studentID, sStudentName, prog), dept.getSections().get(secChoice - 1));
                     break;
 
-                case 4:
+                case 3:
                     System.out.print("Enter Instructor ID: ");
                     int instrID = nextInt();
                     if (dept.getSections().isEmpty()) {
@@ -324,11 +303,11 @@ public class Main {
                     registrar.assignInstructorToSection(new Instructor(instrID, "", ""), dept.getSections().get(assignChoice - 1));
                     break;
 
-                case 5:
+                case 4:
                     registrar.viewDepartmentHierarchy(dept);
                     break;
 
-                case 6:
+                case 5:
                     return;
 
                 default:
