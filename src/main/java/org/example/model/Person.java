@@ -9,10 +9,6 @@ public abstract class Person {
         this.name = name;
     }
 
-    public Person() {
-
-    }
-
     public int getID(){
         return ID;
     }
@@ -29,6 +25,12 @@ public abstract class Person {
         this.name = name;
     }
 
-    abstract void mainTask();
+    @Override
+    public String toString() {
+        return "Person{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
 }

@@ -4,11 +4,13 @@ public class Course {
     int courseID;
     String courseName;
     String program;
+    int units;
 
     public Course(int courseID, String courseName, String program){
         this.courseID = courseID;
         this.courseName = courseName;
         this.program = program;
+        this.units = units;
     }
 
     public int getCourseID(){
@@ -23,6 +25,10 @@ public class Course {
         return program;
     }
 
+    public int getUnits(){
+        return units;
+    }
+
     public void setCourseID(int courseID){
         this.courseID = courseID;
     }
@@ -33,6 +39,10 @@ public class Course {
 
     public void setProgram(String program){
         this.program = program;
+    }
+
+    public void setUnits(int units) {
+        this.units = units;
     }
 
     @Override
