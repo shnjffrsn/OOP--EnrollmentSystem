@@ -3,10 +3,8 @@ import org.example.model.Student;
 import java.util.*;
 import org.example.exceptions.DuplicateIDException;
 
-
-public class StudentEnrollment {
+public class StudentEnrollment implements StudentInterface{
     ArrayList<Student> studentList = new ArrayList<>();
-    Scanner input = new Scanner (System.in);
 
     public void addStudent(Student student) throws DuplicateIDException {
         for (int i = 0; i < studentList.size(); i++) {
@@ -21,20 +19,15 @@ public class StudentEnrollment {
         System.out.println(studentList);
     }
 
-    public void updateStudent(Student student) {
+        public void updateStudent(Student student, String name, String program) {
         for (int i = 0; i < studentList.size(); i++) {
             if (studentList.get(i).getID() == student.getID()) {
-
-                System.out.print("Enter name: ");
-                String name = input.nextLine();
-
-                System.out.print("Enter program: ");
-                String program = input.nextLine();
-
                 studentList.set(i, new Student(student.getID(), name, program));
-                break;
+                System.out.println("Successfully Updated.");
+                return;
             }
         }
+        System.out.println("Student not found.");
     }
 
     public String deleteStudent(Student student) {
@@ -44,6 +37,6 @@ public class StudentEnrollment {
                 return "Successfully Deleted";
             }
         }
-        return "Error";
+        return "Student not found";
     }
 }

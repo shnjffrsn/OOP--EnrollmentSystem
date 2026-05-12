@@ -1,11 +1,18 @@
 package org.example.service;
 import org.example.model.Course;
 import java.util.*;
+import org.example.exceptions.DuplicateIDException;
+
 
 public class CourseEnrollment implements CourseInterface{
     ArrayList<Course> courseList = new ArrayList<>();
 
-    public void addCourse(Course course) {
+    public void addCourse(Course course) throws DuplicateIDException {
+        for (int i = 0; i < courseList.size(); i++) {
+            if (courseList.get(i).getCourseID() == course.getCourseID()) {
+                throw new DuplicateIDException("Course with ID " + course.getCourseID() + " already exists.");
+            }
+        }
         courseList.add(course);
     }
 
@@ -21,6 +28,7 @@ public class CourseEnrollment implements CourseInterface{
                 return;
             }
         }
+        System.out.println("Course not found.");
     }
 
     public String deleteCourse(Course course) {
@@ -30,6 +38,6 @@ public class CourseEnrollment implements CourseInterface{
                 return "Successfully Deleted";
             }
         }
-        return "Error";
+        return "Course not found.";
     }
 }

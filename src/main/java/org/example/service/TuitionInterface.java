@@ -7,7 +7,7 @@ import org.example.exceptions.InvalidPaymentAmountException;
 
 
 public interface TuitionInterface {
-    TuitionFeePayment calculateFee(Student student, Course course);
+    TuitionFeePayment calculateFee(Student student, Course course, double discountPercent);
     void makePayment(TuitionFeePayment payment, double amount) throws InvalidPaymentAmountException;
     double getRemainingBalance(TuitionFeePayment payment);
 }

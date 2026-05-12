@@ -4,14 +4,30 @@ import org.example.model.Course;
 import org.example.model.Student;
 import org.example.model.TuitionFeePayment;
 import org.example.exceptions.InvalidPaymentAmountException;
+import java.util.*;
 
 
 public class TuitionCalculation implements TuitionInterface {
 
-    public TuitionFeePayment calculateFee(Student student, Course course) {
+    public TuitionFeePayment calculateFee(Student student, Course course, double discountPercent) {
         TuitionFeePayment payment = new TuitionFeePayment(student.getID());
         double fee = payment.calculateTuitionFee(course.getUnits());
-        System.out.println("PHP " + fee + " for " + student.getName());
+
+        System.out.print("Apply scholarship discount? (y/n): ");
+        Scanner input = new Scanner(System.in);
+        String answer = input.nextLine().trim().toLowerCase();
+
+        if (discountPercent > 0) {
+            double discount = fee * (discountPercent / 100.0);
+            double discountedFee = fee - discount;
+            payment.setTotalTuition(discountedFee);
+            System.out.printf("Full tuition:                PHP %.2f%n", fee);
+            System.out.printf("Scholarship discount (%.0f%%): - PHP %.2f%n", discountPercent, discount);
+            System.out.printf("Final tuition for %s:        PHP %.2f%n", student.getName(), discountedFee);
+        } else {
+            System.out.printf("Tuition for %s (%s): PHP %.2f%n",
+                    student.getName(), course.getCourseName(), fee);
+        }
         return payment;
     }
 

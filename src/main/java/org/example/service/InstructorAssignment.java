@@ -17,6 +17,27 @@ public class InstructorAssignment implements InstructorInterface {
         instructorList.add(instructor);
     }
 
+    public void updateInstructor(Instructor instructor, String name, String courses) {
+        for (int i = 0; i < instructorList.size(); i++) {
+            if (instructorList.get(i).getID() == instructor.getID()) {
+                instructorList.set(i, new Instructor(instructor.getID(), name, courses));
+                System.out.println("Successfully Updated.");
+                return;
+            }
+        }
+        System.out.println("Instructor not found.");
+    }
+
+    public String removeInstructor(Instructor instructor) {
+        for (int i = 0; i < instructorList.size(); i++) {
+            if (instructorList.get(i).getID() == instructor.getID()) {
+                instructorList.remove(i);
+                return "Successfully Deleted";
+            }
+        }
+        return "Instructor not found.";
+    }
+
     public void assignInstructorToSection(Instructor instructor, Section section) {
         for (int i = 0; i < instructorList.size(); i++) {
             if (instructorList.get(i).getID() == instructor.getID()) {
